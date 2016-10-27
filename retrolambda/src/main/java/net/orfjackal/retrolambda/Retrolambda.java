@@ -58,7 +58,7 @@ public class Retrolambda {
 
                 @Override
                 protected void visitResource(Path relativePath, byte[] content) throws IOException {
-                    outputDirectory.writeFile(relativePath, content);
+//                    outputDirectory.writeFile(relativePath, content);
                 }
             });
 
@@ -74,7 +74,12 @@ public class Retrolambda {
                 transformed.addAll(transformers.backportInterface(c.reader));
             }
             for (ClassInfo c : classes) {
-                transformed.add(transformers.backportClass(c.reader));
+                try {
+					transformed.add(transformers.backportClass(c.reader));
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
 
             // We need to load some of the classes (for calling the lambda metafactory)
@@ -86,9 +91,9 @@ public class Retrolambda {
     }
 
     static void visitFiles(Path inputDir, List<Path> includedFiles, FileVisitor<Path> visitor) throws IOException {
-        if (includedFiles != null) {
-            visitor = new FilteringFileVisitor(includedFiles, visitor);
-        }
+//        if (includedFiles != null) {
+//            visitor = new FilteringFileVisitor(includedFiles, visitor);
+//        }
         Files.walkFileTree(inputDir, visitor);
     }
 

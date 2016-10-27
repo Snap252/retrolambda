@@ -33,10 +33,23 @@
             <url>http://www.orfjackal.net/</url>
         </developer>
     </developers>
+	
+	<distributionManagement>
+		<repository>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://nexus:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>deployment</id>
+			<name>Internal Snapshots</name>
+			<url>http://nexus:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/orfjackal/retrolambda.git</connection>
-        <url>https://github.com/orfjackal/retrolambda</url>
+        <connection>scm:git:git://github.com/snap252/retrolambda.git</connection>
+        <url>https://github.com/snap252/retrolambda</url>
     </scm>
 
     <properties>
@@ -320,7 +333,7 @@
 
                 <plugin>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>2.5.3</version>
                 </plugin>
 
                 <plugin>
@@ -369,7 +382,7 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>2.1</version>
                 </plugin>
-
+<!--
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -380,7 +393,7 @@
                         <stagingProfileId>9e9bbc30f020cf</stagingProfileId>
                     </configuration>
                 </plugin>
-
+-->
             </plugins>
         </pluginManagement>
     </build>
