@@ -149,7 +149,7 @@
 
     <build>
         <plugins>
-
+<!--
             <plugin>
                 <artifactId>maven-toolchains-plugin</artifactId>
                 <executions>
@@ -167,7 +167,7 @@
                     </toolchains>
                 </configuration>
             </plugin>
-
+-->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -226,6 +226,7 @@
                             </rules>
                         </configuration>
                     </execution>
+					<!--
                     <execution>
                         <id>enforce-multiple-java-versions</id>
                         <goals>
@@ -242,6 +243,7 @@
                             </rules>
                         </configuration>
                     </execution>
+					-->
                 </executions>
             </plugin>
 

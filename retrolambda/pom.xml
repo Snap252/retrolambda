@@ -47,7 +47,7 @@
 
             <!-- To allow the Maven plugin be directly compiled against Retrolamdba,
                  we must backport Retrolambda itself to Java 6 -->
-
+<!--
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <executions>
@@ -60,7 +60,7 @@
                         <configuration>
                             <target>
                                 <property name="compile_classpath" refid="maven.compile.classpath"/>
-                                <exec executable="${env.JAVA8_HOME}/bin/java" failonerror="true">
+                                <exec executable="C:\Program Files\Java\jdk1.8.0_91\jre\bin\java" failonerror="true">
                                     <arg value="-Dretrolambda.bytecodeVersion=50"/>
                                     <arg value="-Dretrolambda.inputDir=${project.build.outputDirectory}"/>
                                     <arg value="-Dretrolambda.classpath=${compile_classpath}"/>
@@ -76,9 +76,10 @@
                     </execution>
                 </executions>
             </plugin>
-
+ -->
             <!-- Create an uber jar containing all dependencies -->
 
+<!--
             <plugin>
                 <artifactId>maven-shade-plugin</artifactId>
                 <executions>
@@ -118,7 +119,7 @@
                     </filters>
                 </configuration>
             </plugin>
-
+ -->
         </plugins>
     </build>
 
